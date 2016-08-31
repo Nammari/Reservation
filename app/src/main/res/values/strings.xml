@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Reservation</string>
+    <string name="customers">Customers</string>
+    <string name="table_reservation">restaurant\'s Tables</string>
+    <string name="retry">Retry</string>
+    <string name="error_text">Something went wrong!</string>
+    <string name="empty">No Results.</string>
+    <string name="empty_search">No customer found.</string>
+    <string name="cant_reserve_table">Sorry this table has been reserved by another customer\nPlease choose another available table.</string>
+    <string name="reservation_removed">Reservation removed!</string>
+    <string name="reservation_success">Reservation has been made for the current customer.</string>
+    <string name="table_reservation_label">Table Reservation</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search using name or id</string>
+</resources>

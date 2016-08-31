@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+        applicationId "nammari.reservation"
+        minSdkVersion 17
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude module: 'recyclerview-v7'
+    }
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.evernote:android-job:1.0.11'
+    compile 'com.android.support:design:24.1.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    apt 'com.bluelinelabs:logansquare-compiler:1.3.6'
+    compile 'com.bluelinelabs:logansquare:1.3.6'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'dk.ilios:realmfieldnameshelper:1.0.0'
+    compile 'com.google.android.gms:play-services-gcm:9.4.0'
+    androidTestCompile ('com.squareup.assertj:assertj-android:1.1.1'){
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile 'com.squareup.okhttp3:mockwebserver:3.4.1'
+}
